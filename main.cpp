@@ -118,7 +118,7 @@ size_t MinimumPosition(const int array[], size_t size){
     }
 }
 void SelectionSort(int array[], size_t size, size_t sortMkr){
-    if (sortMkr > 1){
+    if (sortMkr > 0){
         SelectionSort(array, size, sortMkr - 1);
     }
     size_t min = sortMkr;
