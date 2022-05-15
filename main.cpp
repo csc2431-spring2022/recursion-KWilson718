@@ -12,7 +12,7 @@ unsigned long long int Fibonacci(unsigned int n);
 void PrintReverseString(const string& str, ostream& output = cout);
 // You may change the parameters of these functions
 size_t MinimumPosition(const int array[], size_t size);
-void SelectionSort(int array[], size_t size);
+void SelectionSort(int array[], size_t size, size_t sortMkr);
 
 
 int main() {
@@ -57,7 +57,7 @@ int main() {
 	cout << "Testing Sorting" << endl;
 	bool equal;
 	for (int i = 0; i < TESTS; ++i) {
-		SelectionSort(data[i], ELEMENTS);
+		SelectionSort(data[i], ELEMENTS, ELEMENTS - 1);
 		equal = true;
 		for (int j = 0; j < ELEMENTS; ++j) {
 			if (data[i][j] != sortedArrays[i][j]){
@@ -117,6 +117,10 @@ size_t MinimumPosition(const int array[], size_t size){
         return size;
     }
 }
-void SelectionSort(int array[], size_t size){
-    
+void SelectionSort(int array[], size_t size, size_t sortMkr){
+    if (sortMkr > 1){
+        SelectionSort(array, size, sortMkr - 1);
+    }
+
+
 }
