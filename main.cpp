@@ -121,6 +121,13 @@ void SelectionSort(int array[], size_t size, size_t sortMkr){
     if (sortMkr > 1){
         SelectionSort(array, size, sortMkr - 1);
     }
-
-
+    size_t min = sortMkr;
+    for (size_t i = sortMkr; i < size; i++){
+        if (array[i] < array[min]){
+            min = i;
+        }
+    }
+    int temp = array[sortMkr];
+    array[sortMkr] = array[min];
+    array[min] = temp;
 }
