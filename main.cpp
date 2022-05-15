@@ -85,9 +85,21 @@ int main() {
 }
 
 unsigned long long int Fibonacci(unsigned int n){
-	return 0;
+    if (n == 0){
+        return 0;
+    }
+    else if ((n == 1)||(n == 2)){
+        return 1;
+    }
+    else{
+        return Fibonacci(n-1) + Fibonacci(n-2);
+    }
 }
 void PrintReverseString(const string& str, ostream& output){
+    if(!str.empty()){
+        output << str.at(str.size() - 1);
+        PrintReverseString(str.substr(0, (str.size() - 1)), output);
+    }
 }
 // You may change the parameters of these functions
 size_t MinimumPosition(const int array[], size_t size){
