@@ -103,8 +103,20 @@ void PrintReverseString(const string& str, ostream& output){
 }
 // You may change the parameters of these functions
 size_t MinimumPosition(const int array[], size_t size){
-	return 0;
+    if (size > 0 ){
+        size_t curMin = MinimumPosition(array, size - 1);
+        if (array[size] < array[curMin]){
+            return size;
+        }
+        else{
+            return curMin;
+        }
+
+    }
+    else{
+        return size;
+    }
 }
 void SelectionSort(int array[], size_t size){
-
+    
 }
